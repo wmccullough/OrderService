@@ -7,24 +7,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using StatelessOrderService.Data;
+using System.Data.Entity;
 
 namespace StatelessOrderService
 {
     /// <summary>
     /// The FabricRuntime creates an instance of this class for each service type instance. 
     /// </summary>
-    internal sealed class StatelessOrderService : StatelessService, ICounter
+    internal sealed class StatelessOrderService : StatelessService, IOrderRepository
     {
-        public async Task<long> GetCountAsync()
+        public async Task<Order> Get(Guid orderKey)
         {
-            long value = 0;
+            using (OrdersContext db = new OrdersContext()) {
+                db.Configuration.ProxyCreationEnabled = false;
 
-            await Task.Factory.StartNew(() =>
-            {
-                value = Convert.ToInt64(0);
-            });
+                Order order = await db.Orders.FirstOrDefaultAsync(o => o.OrderKey == orderKey);
+                return order;
+            }
+        }
 
-            return value;
+        public async Task<IEnumerable<Order>> GetAll()
+        {
+            using (OrdersContext db = new OrdersContext()) {
+                db.Configuration.ProxyCreationEnabled = false;
+
+                List<Order> orders = await db.Orders.ToListAsync<Order>();
+                return orders;
+            }
         }
 
         /// <summary>
@@ -37,7 +47,7 @@ namespace StatelessOrderService
             {
                 new ServiceInstanceListener(
                     (initParams) =>
-                        new ServiceRemotingListener<ICounter>(initParams, this))
+                        new ServiceRemotingListener<IOrderRepository>(initParams, this))
             };
         }
 

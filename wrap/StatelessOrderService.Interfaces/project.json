@@ -10,7 +10,8 @@
       "dependencies": {
         "Microsoft.ServiceFabric": "4.4.87-preview",
         "Microsoft.ServiceFabric.Data": "1.4.87-preview",
-        "Microsoft.ServiceFabric.Services": "1.4.87-preview"
+        "Microsoft.ServiceFabric.Services": "1.4.87-preview",
+        "StatelessOrderService.Data": "1.0.0-*"
       }
     }
   }

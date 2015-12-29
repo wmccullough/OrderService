@@ -64,10 +64,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICounter.cs" />
+    <Compile Include="IOrderRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StatelessOrderService.Data\StatelessOrderService.Data.csproj">
+      <Project>{5b0937bd-9d77-4d17-aa96-81a4ff86ef35}</Project>
+      <Name>StatelessOrderService.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

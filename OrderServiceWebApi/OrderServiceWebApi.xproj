@@ -17,6 +17,7 @@
     <ServiceFabricServiceManifestPath>PackageRoot\ServiceManifest.xml</ServiceFabricServiceManifestPath>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StatelessOrderService.Data\StatelessOrderService.Data.csproj" />
     <ProjectReference Include="..\StatelessOrderService.Interfaces\StatelessOrderService.Interfaces.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
