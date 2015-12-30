@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatelessOrderService.Inter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatelessOrderService.Data", "StatelessOrderService.Data\StatelessOrderService.Data.csproj", "{5B0937BD-9D77-4D17-AA96-81A4FF86EF35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderActor", "OrderActor\OrderActor.csproj", "{202B3F1B-341C-4E71-8E3A-8B26FAF431AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderActor.Interfaces", "OrderActor.Interfaces\OrderActor.Interfaces.csproj", "{3323AE87-30F5-4663-AE4C-ED7A0B1B300F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,18 @@ Global
 		{5B0937BD-9D77-4D17-AA96-81A4FF86EF35}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B0937BD-9D77-4D17-AA96-81A4FF86EF35}.Release|x64.ActiveCfg = Release|Any CPU
 		{5B0937BD-9D77-4D17-AA96-81A4FF86EF35}.Release|x64.Build.0 = Release|Any CPU
+		{202B3F1B-341C-4E71-8E3A-8B26FAF431AD}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{202B3F1B-341C-4E71-8E3A-8B26FAF431AD}.Debug|x64.ActiveCfg = Debug|x64
+		{202B3F1B-341C-4E71-8E3A-8B26FAF431AD}.Debug|x64.Build.0 = Debug|x64
+		{202B3F1B-341C-4E71-8E3A-8B26FAF431AD}.Release|Any CPU.ActiveCfg = Release|x64
+		{202B3F1B-341C-4E71-8E3A-8B26FAF431AD}.Release|x64.ActiveCfg = Release|x64
+		{202B3F1B-341C-4E71-8E3A-8B26FAF431AD}.Release|x64.Build.0 = Release|x64
+		{3323AE87-30F5-4663-AE4C-ED7A0B1B300F}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{3323AE87-30F5-4663-AE4C-ED7A0B1B300F}.Debug|x64.ActiveCfg = Debug|x64
+		{3323AE87-30F5-4663-AE4C-ED7A0B1B300F}.Debug|x64.Build.0 = Debug|x64
+		{3323AE87-30F5-4663-AE4C-ED7A0B1B300F}.Release|Any CPU.ActiveCfg = Release|x64
+		{3323AE87-30F5-4663-AE4C-ED7A0B1B300F}.Release|x64.ActiveCfg = Release|x64
+		{3323AE87-30F5-4663-AE4C-ED7A0B1B300F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

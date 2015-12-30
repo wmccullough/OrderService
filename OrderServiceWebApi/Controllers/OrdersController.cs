@@ -6,6 +6,8 @@ using Microsoft.AspNet.Mvc;
 using StatelessOrderService.Data;
 using StatelessOrderService.Interfaces;
 using Microsoft.ServiceFabric.Services.Remoting.Client;
+using OrderActor.Interfaces;
+using Microsoft.ServiceFabric.Actors;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,8 +23,8 @@ namespace OrderServiceWebApi.Controllers
             try {
                 //NOTES: In the MSDN example, it provides a partition id of '0', don't do this for stateless!!
                 //service fabric will resolve the partition itself for stateless!
-                IOrderRepository orderRepository =
-                ServiceProxy.Create<IOrderRepository>(new Uri("fabric:/OrderService/StatelessOrderService"));
+                IOrderActor orderRepository =
+                ActorProxy.Create<IOrderActor>(ActorId.NewId(), new Uri("fabric:/OrderService/OrderActorService"));
 
                 IEnumerable<Order> orders = await orderRepository.GetAll();
 
@@ -40,8 +42,8 @@ namespace OrderServiceWebApi.Controllers
             try {
                 //NOTES: In the MSDN example, it provides a partition id of '0', don't do this for stateless!!
                 //service fabric will resolve the partition itself for stateless!
-                IOrderRepository orderRepository =
-                ServiceProxy.Create<IOrderRepository>(new Uri("fabric:/OrderService/StatelessOrderService"));
+                IOrderActor orderRepository =
+                ActorProxy.Create<IOrderActor>(ActorId.NewId(), new Uri("fabric:/OrderService/OrderActorService"));
 
                 Order order = await orderRepository.Get(orderKey);
 
