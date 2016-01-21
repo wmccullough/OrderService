@@ -26,8 +26,7 @@
       "dnx451": {
         "dependencies": {
           "OrderActor.Interfaces": "1.0.0-*",
-          "StatelessOrderService.Data": "1.0.0-*",
-          "StatelessOrderService.Interfaces": "1.0.0-*"
+          "StatelessOrderService.Data": "1.0.0-*"
         }
       }
     },

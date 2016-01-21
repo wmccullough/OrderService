@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using StatelessOrderService.Data;
-using StatelessOrderService.Interfaces;
 using Microsoft.ServiceFabric.Services.Remoting.Client;
 using OrderActor.Interfaces;
 using Microsoft.ServiceFabric.Actors;
